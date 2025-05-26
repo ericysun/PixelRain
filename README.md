@@ -5,10 +5,10 @@ https://github.com/user-attachments/assets/adfabd07-2d7e-452a-b4d8-82c2a8672e57
 
 ## Parts
 - Arduino Joystick
-- 8 resistors
+- 8 90Ω resistors
 - 8 PMOS transistors
 - 64 LEDs
-- Arduino Uno Mini Control Board
+- Adafruit Metro Mini (Arduino-Compatible Control Board)
 - Custom Circuit Board
 #### On the PCB
 1. Solder 64 LEDs in the 8x8 Grid
