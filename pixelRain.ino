@@ -7,9 +7,7 @@ int dropletY = -1;
 bool gameOver = false;
 
 unsigned long lastMoveTime = 0;
-// unsigned int fallDelay = 200; //hard level <--we can change the level to demo to Crista depending on what she wants
-unsigned int fallDelay = 400; //mid level
-// unsigned int fallDelay = 800; //easy level
+unsigned int fallDelay = 400;
 
 void setup() {
   Serial.begin(115200);
