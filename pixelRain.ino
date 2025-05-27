@@ -3,29 +3,24 @@ const byte CATHODE_PINS[8] = {A3, A2, A1, A0, 5, 4, 3, 2};
 byte grid[8][8]; //0 is off, 1 LED is on, 2 is for basket
 byte paddleColumn = 2;
 int dropletX = 0;
-int dropletY = -1; // -1 = not active
+int dropletY = -1;
 bool gameOver = false;
 
-unsigned long lastMoveTime = 0; //counter so that we don't add another raindrop before the first one falls
+unsigned long lastMoveTime = 0;
 // unsigned int fallDelay = 200; //hard level <--we can change the level to demo to Crista depending on what she wants
 unsigned int fallDelay = 400; //mid level
 // unsigned int fallDelay = 800; //easy level
 
 void setup() {
-  //Test that the grid is init w zero values
   Serial.begin(115200);
   Serial.print("Grid:");
   Serial.print(grid[0][0]);
-
-  //start everything turned off
   for (byte i = 0; i < 8; i++) {
     pinMode(ANODE_PINS[i], OUTPUT);
     pinMode(CATHODE_PINS[i], OUTPUT);
     digitalWrite(ANODE_PINS[i], HIGH);
     digitalWrite(CATHODE_PINS[i], HIGH);
   }
-
-  //set seed randommly for LED raindrops
   randomSeed(analogRead(A4));
 }
 
@@ -36,7 +31,7 @@ void loop() {
     maybeDropDroplet();
   }
   else {
-    while (true);//setGameOver();
+    while (true);
   }
   updateLEDs();
 }
@@ -45,12 +40,6 @@ void loop() {
 void readJoystickInput() {
   int joystickXValue = analogRead(A5);
   paddleColumn = map(joystickXValue, 0, 1023, 0, 5);
-  // Serial.print("joystickXValue: ");
-  // Serial.print(joystickXValue);
-  // Serial.print("\n");
-  // Serial.print("paddleColumn: ");
-  // Serial.print(paddleColumn);
-  // Serial.print("\n");
 }
 
 // change basket position each move
@@ -79,7 +68,7 @@ void maybeDropDroplet() {
     if (dropletY < 7) {
       grid[dropletY][dropletX] = 1;
     }
-    else {// we are at the bottom row
+    else {
       if (dropletX >= paddleColumn && dropletX <= paddleColumn + 2) {//user caught it spawn new one
         dropletY = -1;
       }
