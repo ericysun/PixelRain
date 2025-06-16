@@ -1,3 +1,5 @@
+<img width="841" alt="pixelRainHeader" src="https://github.com/user-attachments/assets/ab8e5671-c044-4a85-b00c-b33a52d80316" />
+
 # PixelRain
 PixelRain is a minimalist arcade game designed for an 8x8 LED matrix controlled via a joystick. Navigate your pixel to dodge falling raindrops, testing your reflexes and precision. Built on a custom PCB, this game offers a blend of simplicity and challenge.
 
