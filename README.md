@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/adfabd07-2d7e-452a-b4d8-82c2a8672e57
 - 8 PMOS transistors
 - 64 LEDs
 - Adafruit Metro Mini (Arduino-Compatible Control Board)
-- Custom Circuit Board
+- Custom Circuit Board (8x8 grid for LEDs, with a column of 8 PMOS transistors on the left of the grid, and a row for 8 resistors below the grid)
 #### On the PCB
 1. Solder 64 LEDs in the 8x8 Grid
 2. Attach a PMOS transistor at the start of each row
