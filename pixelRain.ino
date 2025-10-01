@@ -54,11 +54,11 @@ void updateBasket() {
 void maybeDropDroplet() {
   if (millis() - lastMoveTime >= fallDelay) {
     lastMoveTime = millis();
-    if (dropletY >= 0) {
+    if (dropletY >= 0) {//droplet still above surface, move it down
       grid[dropletY][dropletX] = 0;
       dropletY++;
     }
-    else {
+    else {//droplet gone, spawn in a new one
       dropletX = random(0, 8);
       dropletY = 0;
     }
